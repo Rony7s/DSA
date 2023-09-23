@@ -28,9 +28,16 @@ int dequeue(Queue *q){
     return item;
 }
 
+void show(Queue *q){
+    for(int i = q->head; i< q->tail; i++){
+        cout <<" "<<q->data[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main(){
 
-    cout <<"EdTech 4"<<endl;
+    cout <<"This is Queue"<<endl;
     Queue myQ;
     int item;
     myQ.head = 0;
@@ -45,20 +52,27 @@ int main(){
     enqueue (&myQ, 5);
     cout <<"tail = "<< myQ.tail <<endl;
 
+    enqueue (&myQ, 99);
+
     cout <<"starting head = "<<myQ.head<<endl;
 
-    item  = dequeue (&myQ);
-    cout <<"item = "<< item <<" head = "<<myQ.head<<endl;
+    show (&myQ);
 
     item  = dequeue (&myQ);
     cout <<"item = "<< item <<" head = "<<myQ.head<<endl;
 
+    item  = dequeue (&myQ);
+    cout <<"item = "<< item <<" head = "<<myQ.head<<endl;
+
+    show (&myQ);
 
     enqueue (&myQ, 7);
     cout <<"tail = "<< myQ.tail <<endl;
 
     enqueue (&myQ, 9);
     cout <<"tail = "<< myQ.tail <<endl;
+
+    show (&myQ);
 
     return 0;
 }
